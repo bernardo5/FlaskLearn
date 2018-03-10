@@ -1,0 +1,29 @@
+<!--variables can be modified with filters, added after the variable name with a pipe character as separator
+- Hello {{ name|capitalize }}
+
+-safe -> renders the value without applying escaping
+-capitalize -> conversts the first character of the value to uppercase and the rest to lower case
+-lower -> 
+-upper
+- title -> capitalizes each word in the value
+-trim -> removes leading and trailing whitespace from the value
+-striptags -> removes any html tags from the value before rendering
+--> 
+
+{% extends "base.html" %}
+{% block title %} Index {% endblock %}
+
+{% block head %}
+	{{ super() }}
+
+{% endblock %}
+
+{% block body %}
+	<h1>Hello World</h1>
+	<h2>Animals examples:</h2>
+	<ul>
+		{% for animal in animals%}
+		<li>{{animal}}</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
